@@ -1,0 +1,6 @@
+.temp
+.vscode
+/dist
+/node_modules
+/test
+yarn-error.log

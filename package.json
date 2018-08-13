@@ -1,0 +1,59 @@
+{
+  "name": "retrofit-cjs",
+  "version": "1.0.0",
+  "description": "一个基于js装饰器（Decorator）的网络请求库",
+  "main": "lib/index.js",
+  "type": "javascript",
+  "repository": "https://github.com/glangzh/retrofit-cjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --env.NODE_ENV=common --progress --watch",
+    "start": "webpack-dev-server --env.NODE_ENV=dev --progress --watch",
+    "serve": "webpack-dev-server --env.NODE_ENV=development --progress --watch",
+    "dev": "webpack-dev-server --open --env.NODE_ENV=development --progress --watch --hot --inline",
+    "common": "webpack --config scripts/webpack.common.js",
+    "build": "webpack --env.NODE_ENV=common",
+    "build:prod": "webpack --env.NODE_ENV=production"
+  },
+  "keywords": [
+    "retrofit-cjs",
+    "retrofit.js",
+    "retrofit",
+    "http",
+    "network",
+    "decorator",
+    "annotations",
+    "react",
+    "vue"
+  ],
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-decorators": "^6.24.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.5",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "css-loader": "^1.0.0",
+    "file-loader": "^1.1.11",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.9.2",
+    "sass-loader": "^7.0.3",
+    "style-loader": "^0.21.0",
+    "uglifyjs-webpack-plugin": "^1.2.7",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.16.1",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "dependencies": {
+    "axios": "^0.18.0"
+  },
+  "bugs": {
+    "url": "https://github.com/glangzh/retrofit-cjs/issues"
+  },
+  "homepage": "https://github.com/glangzh/retrofit-cjs",
+  "author": "zhaofg",
+  "license": "MIT"
+}
