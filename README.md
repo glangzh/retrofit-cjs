@@ -118,7 +118,7 @@ import { GET, POST, Headers } from 'retrofit-cjs';
     // response error
 })
 @Config({timeout: 2000})
-@Header({'User-Agent': 'request'})
+@Headers({'User-Agent': 'request'})
 @Create({
     baseURL: 'https://cnodejs.org/api',
     timeout: 1000,
@@ -135,7 +135,7 @@ class TopicApi{
         // cancel();  //取消当前请求
     })
     @Config({timeout: 1000})
-    @Header({'User-Agent': 'request'})
+    @Headers({'User-Agent': 'request'})
     @GET('/v1/topics')
     // @GET('/v1/{0}', 'topics')
     // @GET('https://cnodejs.org/api/v1/topics')

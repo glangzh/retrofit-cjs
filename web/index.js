@@ -73,23 +73,6 @@ class TopicApi {
     print(msg) {
         console.log('print-------');
     }
-
-    @Autobind
-    @FormUrlEncoded
-    @POST('http://192.168.2.195:8000/user')
-    addUser(res) {
-
-    }
-
-    @PUT('http://192.168.2.195:8000/user')
-    modifyUser(res) {
-
-    }
-
-    @DELETE('http://192.168.2.195:8000/user')
-    deleteUser(res) {
-
-    }
 }
 
 // test
@@ -101,14 +84,3 @@ topics.getTopic();
 // topics.getDetails('topicId=5433d5e4e737cbe96dcef312', {
 //     limit: 20
 // });
-
-
-// topics.addUser({
-//     id: 1,
-//     name: 'glang'
-// });
-// topics.modifyUser({
-//     id: 1,
-//     name: 'glang'
-// });
-// topics.deleteUser({id: 1});
