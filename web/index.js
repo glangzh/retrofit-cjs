@@ -8,15 +8,14 @@ import {
     Headers,
     FormUrlEncoded,
     AddReqInterceptor,
-    AddResInterceptor
-} from '../lib/index';
-import {
+    AddResInterceptor,
     Interval,
     Timer,
     Autobind,
     Debounce,
-    Throttle
-} from '../lib/utils';
+    Throttle,
+    RetroPlugin
+} from '../lib/index';
 
 // Topics 接口类
 @AddResInterceptor(response => {
@@ -75,6 +74,7 @@ class TopicApi {
         console.log('print-------');
     }
 
+    @Autobind
     @FormUrlEncoded
     @POST('http://192.168.2.195:8000/user')
     addUser(res) {

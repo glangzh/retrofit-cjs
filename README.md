@@ -78,6 +78,7 @@ import { GET, POST, Headers } from 'retrofit-cjs';
     * 配置全局请求头信息，**若使用了 @Create 则作用与当前请求对象，否则作用与全局对象**
 * [@AddReqInterceptor](#AddReqInterceptor)  添加请求拦截器
 * [@AddResInterceptor](#AddResInterceptor)  添加响应拦截器
+    > 注意配置顺序，修饰器会从内向外执行
 ##### 一些工具修饰器
 * [@Debounce](#Debounce) 防抖
 ```js
@@ -88,6 +89,7 @@ import { GET, POST, Headers } from 'retrofit-cjs';
 ```js
     @Throttle(1000, {leading: false}) // 忽略开始函数的的调用
     @Throttle(1000, {trailing: false}) // 忽略结尾函数的调用
+    // 两者不能共存， 否则函数不能执行
 ```
 * [@Timer](#Timer) 定时操作
 ```js
@@ -98,14 +100,16 @@ import { GET, POST, Headers } from 'retrofit-cjs';
 ```js
     @Interval(1000) // 每隔1秒执行一次
     @Interval(1000, true) // 每隔1秒执行一次, 立即执行修饰函数
+    @Interval(1000, 10000) // 每隔1秒执行一次, 10秒后结束
+    @Interval(1000, 10000, true) // 每隔1秒执行一次, 10秒后结束，立即执行修饰函数
 ```
 * [@Autobind](#Autobind) 自动绑定方法（到当前对象）
 * [@RetroPlugin](#RetroPlugin) Vue 插件：全局配置网络请求
-
+> **注意：在同一个方法上，@Debounce,@Throttle,@Timer,@Interval 和 @GET,@POST,@PUT,@DELETE,@HTTP是无法同时使用的**
 
 **3. 使用**
 
-1. 推荐用法
+1. 推荐
 ```js
 @AddResInterceptor((res)=>{
     // response result
@@ -128,7 +132,7 @@ class TopicApi{
     }
 
     @Cancel((cancel) => {
-        // cancel();
+        // cancel();  //取消当前请求
     })
     @Config({timeout: 1000})
     @Header({'User-Agent': 'request'})
@@ -174,7 +178,7 @@ topicApi.addUser({id: 1, name: 'glang'});
 ```
 2. react / react-native
 ```js
-import {Interval, Autobind} from './lib/utils';
+import {Interval, Autobind} from 'retrofit-cjs';
 
 @Create({
     baseURL: 'https://cnodejs.org/api'
@@ -221,9 +225,9 @@ export default {
 ### @RetroPlugin 
 > 使用Vue插件配置请求基本信息
 ```js
-// 入口文件
+// Vue 入口文件
 import Vue from 'vue'
-import {RetroPlugin} from './lib/utils';
+import {RetroPlugin} from 'retrofit-cjs';
 
 Vue.use(RetroPlugin, {
     baseURL: 'https://cnodejs.org/api',
@@ -235,6 +239,7 @@ Vue.use(RetroPlugin, {
 ```
 
 ### @AddReqInterceptor
+> 通过请求拦截器处理请求参数
 ```js
 @AddReqInterceptor((request)=>{
     request.transformRequest = [function (data) {
