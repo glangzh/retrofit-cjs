@@ -103,7 +103,6 @@ import { GET, POST, Headers } from 'retrofit-cjs';
     @Interval(1000, 10000) // 每隔1秒执行一次, 10秒后结束
     @Interval(1000, 10000, true) // 每隔1秒执行一次, 10秒后结束，立即执行修饰函数
 ```
-* [@Autobind](#Autobind) 自动绑定方法（到当前对象）
 * [@RetroPlugin](#RetroPlugin) Vue 插件：全局配置网络请求
 > **注意：在同一个方法上，@Debounce,@Throttle,@Timer,@Interval 和 @GET,@POST,@PUT,@DELETE,@HTTP是无法同时使用的**
 
@@ -178,7 +177,7 @@ topicApi.addUser({id: 1, name: 'glang'});
 ```
 2. react / react-native
 ```js
-import {Interval, Autobind} from 'retrofit-cjs';
+import {Interval} from 'retrofit-cjs';
 
 @Create({
     baseURL: 'https://cnodejs.org/api'
@@ -195,7 +194,6 @@ class App extends Component{
         
     }
 
-    @Autobind
     @Interval(1000, 60 * 1000)
     countdwon(){
 
