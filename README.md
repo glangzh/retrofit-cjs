@@ -34,7 +34,7 @@ npm run eject
     ]
   }
 ```
-**vue-cli3 已默认支持 Decorator。**
+**vue-cli3 已默认支持 Decorator**
 
 **2. 引入 retrofit-cjs**
 ```js
