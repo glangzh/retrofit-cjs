@@ -21,7 +21,6 @@ import {
 // Topics 接口类
 @AddResInterceptor(response => {
     console.log('res-interceptor', response);
-
     return response;
 })
 @AddReqInterceptor(request => {
@@ -39,7 +38,7 @@ import {
     baseURL: 'https://cnodejs.org/api',
     timeout: 1000
 })
-class Topics {
+class TopicApi {
 
     @GET('https://cnodejs.org/api/v1/topics')
     getList(res) {
@@ -94,7 +93,7 @@ class Topics {
 }
 
 // test
-let topics = new Topics();
+let topics = new TopicApi();
 // topics.getList({limit: 10, page: 2});
 // topics.getListByTab();
 // topics.getDetails();
@@ -104,12 +103,12 @@ topics.getTopic();
 // });
 
 
-topics.addUser({
-    id: 1,
-    name: 'glang'
-});
-topics.modifyUser({
-    id: 1,
-    name: 'glang'
-});
-topics.deleteUser({id: 1});
+// topics.addUser({
+//     id: 1,
+//     name: 'glang'
+// });
+// topics.modifyUser({
+//     id: 1,
+//     name: 'glang'
+// });
+// topics.deleteUser({id: 1});

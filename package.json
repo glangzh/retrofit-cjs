@@ -1,7 +1,7 @@
 {
   "name": "retrofit-cjs",
   "version": "1.0.0",
-  "description": "一个基于js装饰器（Decorator）的网络请求库",
+  "description": "一个基于js装饰器（Decorator）和 axios 的网络请求库",
   "main": "lib/index.js",
   "type": "javascript",
   "repository": "https://github.com/glangzh/retrofit-cjs",
@@ -19,6 +19,7 @@
     "retrofit-cjs",
     "retrofit.js",
     "retrofit",
+    "axios",
     "http",
     "network",
     "decorator",
