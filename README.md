@@ -1,6 +1,6 @@
 # retrofit-cjs
 
-> **retrofit-cjs** 是一个基于JavaScript装饰器（Decorator）和 axios 实现的网络请求库, 支持Vue / React / react-native 等常用框架, 支持node.js
+> **retrofit-cjs** 是一个基于JavaScript装饰器（Decorator）和 axios 实现的网络请求库, 支持Vue / React / react-native 等常用框架
  [![tests](https://travis-ci.org/glangzh/retrofit-cjs.svg?branch=master)](http://travis-ci.org/glangzh/retrofit-cjs)
  [![npm](https://img.shields.io/npm/v/retrofit-cjs.svg?style=flat-square)](https://www.npmjs.com/package/retrofit-cjs) [![npm](https://img.shields.io/npm/dt/retrofit-cjs.svg?style=flat-square)](https://www.npmjs.com/package/retrofit-cjs) [![npm](https://img.shields.io/npm/l/retrofit-cjs.svg?style=flat-square)](https://www.npmjs.com/package/retrofit-cjs)
 
